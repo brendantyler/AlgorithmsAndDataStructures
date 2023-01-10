@@ -85,29 +85,31 @@ Console.ReadLine();
 Console.WriteLine("Did you want to start again?");
 Console.WriteLine("Y/N");
 
-char restartResponse = Console.ReadKey().KeyChar;
-Console.WriteLine();
+bool responseLoop = true;
 
-bool response = false;
-while (response == false)
-{
+while (responseLoop) {
+
+    char restartResponse = Console.ReadKey().KeyChar;
+    Console.WriteLine();
+
     switch (Char.ToUpper(restartResponse))
     {
         case 'Y':
             Console.WriteLine("Restarting...");
-            response = true;
+            responseLoop = false;
             Thread.Sleep(2000);
-    //      Console.Clear(); //(commented out for assessment purposes) 
-            goto Start; //Labels to code top
+            Console.Clear();
+            Console.WriteLine("Welcome Back!");
+            goto Start;
         case 'N':
             Console.WriteLine("See You Next Time");
-            response = true;
+            responseLoop = false;
             break;
         default:
             Console.WriteLine("Please Enter a Valid Response");
             break;
     }
-}
+} 
 
 
 
