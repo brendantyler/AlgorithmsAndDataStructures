@@ -10,12 +10,12 @@ Start:
 Console.WriteLine("Please enter a number:");
 int wordAmount = 0;
 
-while (wordAmount == 0)
+while (wordAmount <= 0)
 {
     try
     {
         wordAmount = Int32.Parse(Console.ReadLine());
-        if (wordAmount == 0)
+        if (wordAmount <= 0)
         {
             Console.WriteLine("Please enter an appropriate value");
         } 
