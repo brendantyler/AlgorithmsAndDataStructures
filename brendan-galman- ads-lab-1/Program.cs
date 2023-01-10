@@ -5,7 +5,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using System.Transactions;
 
-
+Start: 
 Console.WriteLine("Please enter a number:");
 int wordAmount = 0;
 
@@ -80,6 +80,34 @@ Console.WriteLine($"The letter '{letterToCheck}' appears {letterOccurences} time
 Console.WriteLine($"This letter makes up more than {percentInt}% of the total number of characters");
 
 
+Console.ReadLine();
+
+Console.WriteLine("Did you want to start again?");
+Console.WriteLine("Y/N");
+
+char restartResponse = Console.ReadKey().KeyChar;
+Console.WriteLine();
+
+bool response = false;
+while (response == false)
+{
+    switch (Char.ToUpper(restartResponse))
+    {
+        case 'Y':
+            Console.WriteLine("Restarting...");
+            response = true;
+            Thread.Sleep(2000);
+    //      Console.Clear(); //(commented out for assessment purposes) 
+            goto Start; //Labels to code top
+        case 'N':
+            Console.WriteLine("See You Next Time");
+            response = true;
+            break;
+        default:
+            Console.WriteLine("Please Enter a Valid Response");
+            break;
+    }
+}
 
 
 
