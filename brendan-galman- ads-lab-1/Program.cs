@@ -33,25 +33,22 @@ string[] enteredWords = new string[wordAmount];
 
 for (int i = 0; i < enteredWords.Length;)
 {
-    while (i < enteredWords.Length)
+    enteredWords[i] = Console.ReadLine();
+
+    if (enteredWords[i].All(char.IsLetter) == false)
     {
-        enteredWords[i] = Console.ReadLine();
-
-        if (enteredWords[i].All(char.IsLetter) == false)
-        {
-            Console.WriteLine("Please do not use Spaces or Numbers or Symbols");
-        }
-        else if (enteredWords[i].Length == 0)
-        {
-            Console.WriteLine("Please enter a word");
-        }
-        else
-        {
-            i++;
-        }
-
+        Console.WriteLine("Please do not use Spaces or Numbers or Symbols");
+    }
+    else if (enteredWords[i].Length == 0)
+    {
+        Console.WriteLine($"Please enter a Valid Word");
+    }
+    else
+    {
+        i++;
     }
 }
+
 string joinWords = string.Join("", enteredWords);
 
 char[] separateChars = joinWords.ToLower().ToCharArray();
@@ -90,12 +87,10 @@ foreach (char letter in separateChars)
 double percentDouble = ((double)letterOccurences / (double)totalChars) * 100;
 int percentInt = (int)percentDouble;
 
-
 Console.WriteLine();
 Console.WriteLine($"Out of {totalChars} total letters");
 Console.WriteLine($"The letter '{letterToCheck}' appears {letterOccurences} times in the array.");
 Console.WriteLine($"This letter makes up more than {percentInt}% of the total number of characters");
-
 
 Console.ReadLine();
 
