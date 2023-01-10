@@ -57,7 +57,7 @@ BigInteger totalChars = separateChars.Length;
 
 char letterToCheck = ' ';
 
-Console.WriteLine("Please enter a character");
+Console.WriteLine("Please enter a character to count:");
 
 while (letterToCheck == ' ') {
     char letterChosen = Console.ReadKey().KeyChar;
