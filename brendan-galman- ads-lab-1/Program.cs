@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Linq.Expressions;
 using System.Net.Sockets;
 using System.Numerics;
 using System.Reflection.Metadata.Ecma335;
@@ -57,8 +58,24 @@ char[] separateChars = joinWords.ToLower().ToCharArray();
 
 BigInteger totalChars = separateChars.Length;
 
+char letterToCheck = ' ';
+
 Console.WriteLine("Please enter a character");
-char letterToCheck = Console.ReadKey().KeyChar;
+
+while (letterToCheck == ' ') {
+    char letterChosen = Console.ReadKey().KeyChar;
+
+    if (Char.IsLetter(letterChosen))
+    {
+        letterToCheck = letterChosen;
+    }
+    else
+    {
+        Console.WriteLine();
+        Console.WriteLine("Please enter a Valid Character");
+    }
+}
+
 
 int letterOccurences = 0;
 
