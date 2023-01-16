@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using System.Linq;
 
+Console.WriteLine("Please provide a string");
 string sentenceInput = Console.ReadLine();
 string sentence = String.Join(" ", sentenceInput);
 char[] multipleOccurance = new char[] { };
