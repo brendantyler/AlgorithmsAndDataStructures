@@ -7,21 +7,13 @@ int[] arrFinal = arr1.Concat(arr2).ToArray();
 
 Console.WriteLine(string.Join( " ", arrFinal));
 
-
 int holdNumber = 0;
 
 // Compare 
 for (int i = 0; i < arrFinal.Length; i++)
 {
     for (int j = i + 1; j < arrFinal.Length; j++)
-    {   
-        if (arrFinal[i] > arrFinal[j])
-        {
-            holdNumber = arrFinal[i];
-            arrFinal[j] = arrFinal[i];
-            arrFinal[i] = holdNumber;
-            
-        }
+    {
     }
 }
 
