@@ -14,6 +14,14 @@ for (int i = 0; i < arrFinal.Length; i++)
 {
     for (int j = i + 1; j < arrFinal.Length; j++)
     {
+        if (arrFinal[i] > arrFinal[j])
+        { 
+            holdNumber = arrFinal[i];
+            arrFinal[j] = arrFinal[i];
+
+            arrFinal[i] = holdNumber;
+
+        }
     }
 }
 
