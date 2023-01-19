@@ -16,7 +16,7 @@ for (int i = 0; i < arrFinal.Length; i++)
     {
         if (arrFinal[i] > arrFinal[j])
         { 
-            holdNumber = arrFinal[i];
+            holdNumber = arrFinal[j];
             arrFinal[j] = arrFinal[i];
 
             arrFinal[i] = holdNumber;
